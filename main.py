@@ -1,6 +1,10 @@
+import os
+from dotenv import load_dotenv
 from ollama import Client
 from pydantic import BaseModel
 from tkinter import filedialog
+
+load_dotenv()
 
 Image_input = None
 
@@ -11,10 +15,11 @@ def get_image():
         filetypes=[("Image Files", "*.png;*.jpg;*.jpeg;*.gif")]
     )
 
+SECRET_KEY = os.getenv("PROBLEM_SOLVER_KEY")
 
 client = Client(
     host= "https://ollama.com",
-    headers={"Authorization": "Bearer 5506147938074c458450e9f8b1d1ee98.sqR_YTTRWMtG1pHd8VgA-hol"},
+    headers={"Authorization": f"Bearer {SECRET_KEY}"},
 )
 
 SYSTEM_PROMPT = """You are a good problem solver, which views the image and answers the problem based on that image. 
