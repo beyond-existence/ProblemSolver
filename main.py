@@ -17,6 +17,7 @@ CRITICAL REQUIREMENT: You must respond ONLY with a raw JSON object matching this
   "safety": "string description"
 }"""
 
+
 CONTEXT = input("Enter your problem: ")
 path = r"E:\Problem_solver\problem.jpg"
 
@@ -54,5 +55,5 @@ for obj in Solved.action:
     print(obj)
 print(f"\nSafety:\n{Solved.safety}")
 
-
+print("HI:)")
 #Why is the circuit not working?
